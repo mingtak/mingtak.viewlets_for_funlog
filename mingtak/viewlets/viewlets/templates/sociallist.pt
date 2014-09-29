@@ -1,8 +1,8 @@
 <div>
-  <ul>
-    <li tal:content="python:context.portal_registry['mingtak.viewlets.headerfootersetting.IHeaderFooterSetting.socialFacebook']"></li>
-    <li tal:content="python:context.portal_registry['mingtak.viewlets.headerfootersetting.IHeaderFooterSetting.socialGooglePlus']"></li>
-    <li tal:content="python:context.portal_registry['mingtak.viewlets.headerfootersetting.IHeaderFooterSetting.socialTwitter']"></li>
-    <li tal:content="python:context.portal_registry['mingtak.viewlets.headerfootersetting.IHeaderFooterSetting.socialEmail']"></li>
+  <ul tal:define="registry string:mingtak.viewlets.headerfootersetting.IHeaderFooterSetting">
+    <li tal:content="python:context.portal_registry['%s.socialFacebook' % registry]"></li>
+    <li tal:content="python:context.portal_registry['%s.socialGooglePlus' % registry]"></li>
+    <li tal:content="python:context.portal_registry['%s.socialTwitter' % registry]"></li>
+    <li tal:content="python:context.portal_registry['%s.socialEmail' % registry]"></li>
   </ul>
 </div>
