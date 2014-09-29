@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="mingtak.viewlets">
+
+  <browser:page
+    for="*"
+    name="headerfootersetting"
+    permission="cmf.ManagePortal"
+    class=".headerfooterconfiglets.HeaderFooterControlPanelView"
+    />
+<!--
+  <browser:page
+    name="cjProductControlPanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".cjconfiglet.CjControlPanelView"
+    />
+-->
+</configure>
