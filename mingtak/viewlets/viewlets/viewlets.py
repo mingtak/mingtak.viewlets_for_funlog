@@ -10,8 +10,17 @@ IBelowContentBody, IBelowContent, IPortalFooter, IScripts
 """
 
 
+# Add viewlet manager, IWebsiteTop
+from zope.viewlet.interfaces import IViewletManager
+class IWebsiteTop(IViewletManager):
+    """A viewlet manager
+    """
+
+
+# Below define customized viewlet
 grok.context(Interface)
 grok.templatedir('templates')
 
+
 class SocialList(grok.Viewlet):
-    grok.viewletmanager(IPortalHeader)
+    grok.viewletmanager(IWebsiteTop)

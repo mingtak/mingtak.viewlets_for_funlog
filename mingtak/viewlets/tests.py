@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for PromotionSetting
+        ztc.ZopeDocFileSuite(
+            'PromotionSetting.txt',
+            package='mingtak.viewlets',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for HeaderFooterSetting
         ztc.ZopeDocFileSuite(
             'HeaderFooterSetting.txt',

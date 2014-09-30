@@ -10,6 +10,14 @@
     permission="cmf.ManagePortal"
     class=".headerfooterconfiglets.HeaderFooterControlPanelView"
     />
+
+  <browser:page
+    for="*"
+    name="promotionsetting"
+    permission="cmf.ManagePortal"
+    class=".promotionsetting.PromotionSettingControlPanelView"
+    />
+
 <!--
   <browser:page
     name="cjProductControlPanel"

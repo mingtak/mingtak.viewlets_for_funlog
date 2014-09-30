@@ -5,5 +5,14 @@
     i18n_domain="mingtak.viewlets">
 
 
+<!-- necessary, show in /@@manager-viewlets -->
+<browser:viewletManager
+name="IWebsiteTop"
+provides=".viewlets.IWebsiteTop"
+permission="zope2.View"
+class="plone.app.viewletmanager.manager.OrderedViewletManager"
+/>
+
+
 </configure>
 

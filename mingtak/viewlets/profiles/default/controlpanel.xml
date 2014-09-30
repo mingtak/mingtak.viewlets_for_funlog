@@ -17,4 +17,17 @@
             <permission>Manage portal</permission>
     </configlet>
 
+    <configlet
+        title="Promotional product list setting"
+        action_id="mingtak.viewlets.promotionsetting"
+        appId="mingtak.viewlets"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@promotionsetting"
+        icon_expr="string:/favicon.ico"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
 </object>
