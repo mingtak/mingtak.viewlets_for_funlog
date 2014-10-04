@@ -1,7 +1,7 @@
 <tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.vacation'];
                       catalog python:context.portal_catalog">
 
-            <div class="fullwidth-section" id="bg-8">
+            <div class="fullwidth-section" id="bg-1">
 				<div class="fullwidth-section-content">
                     <div class="row">
                     	<div class="span12">	                        

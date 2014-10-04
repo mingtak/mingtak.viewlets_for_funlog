@@ -1,208 +1,36 @@
-            <ul class="portfolio-strip fixed">
-            	<li>
-                	
-                    <div class="portfolio-item">
-                    
-                        <div class="portfolio-item-preview">			
-                       
-                            <img src="_content/portfolio/385x500-1.png" alt="">                            
-                            
-                            <div class="portfolio-item-overlay">
-                            
-                                <div class="portfolio-item-overlay-actions">
-                                    
-                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="_content/portfolio/385x500-1.png">
-                                        <i class="ifc-zoom_in"></i>
-                                    </a>
-                                    
-                                    <a class="portfolio-item-link" href="portfolio-item.html">
-                                        <i class="ifc-link"></i>
-                                    </a>
-                                
-                                </div><!-- end .portfolio-item-overlay-actions -->
-                            
-                            </div><!-- end .portfolio-item-overlay -->
-                        
-                        </div><!-- end .portfolio-item-preview -->
-                        
-                        <div class="portfolio-item-description">
-                        
-                            <h3>Lorem ipsum dolor</h3>
-                        
-                        </div><!-- end .portfolio-item-description -->
-                    
-                    </div><!-- end .portfolio-item -->
-                    
-                </li>
-                <li>
-                	
-                    <div class="portfolio-item">
-                    
-                        <div class="portfolio-item-preview">			
-                       
-                            <img src="_content/portfolio/385x500-2.png" alt="">                            
-                            
-                            <div class="portfolio-item-overlay">
-                            
-                                <div class="portfolio-item-overlay-actions">
-                                    
-                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="_content/portfolio/385x500-2.png">
-                                        <i class="ifc-zoom_in"></i>
-                                    </a>
-                                    
-                                    <a class="portfolio-item-link" href="portfolio-item.html">
-                                        <i class="ifc-link"></i>
-                                    </a>
-                                
-                                </div><!-- end .portfolio-item-overlay-actions -->
-                            
-                            </div><!-- end .portfolio-item-overlay -->
-                        
-                        </div><!-- end .portfolio-item-preview -->
-                        
-                        <div class="portfolio-item-description">
-                        
-                            <h3>Donec ut lectus</h3>
-                        
-                        </div><!-- end .portfolio-item-description -->
-                    
-                    </div><!-- end .portfolio-item -->
-                    
-                </li>
-                <li>
-                	
-                    <div class="portfolio-item">
-                    
-                        <div class="portfolio-item-preview">			
-                       
-                            <img src="_content/portfolio/385x500-3.png" alt="">                            
-                            
-                            <div class="portfolio-item-overlay">
-                            
-                                <div class="portfolio-item-overlay-actions">
-                                    
-                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="_content/portfolio/385x500-3.png">
-                                        <i class="ifc-zoom_in"></i>
-                                    </a>
-                                    
-                                    <a class="portfolio-item-link" href="portfolio-item.html">
-                                        <i class="ifc-link"></i>
-                                    </a>
-                                
-                                </div><!-- end .portfolio-item-overlay-actions -->
-                            
-                            </div><!-- end .portfolio-item-overlay -->
-                        
-                        </div><!-- end .portfolio-item-preview -->
-                        
-                        <div class="portfolio-item-description">
-                        
-                            <h3>Cras semper tellus</h3>
-                        
-                        </div><!-- end .portfolio-item-description -->
-                    
-                    </div><!-- end .portfolio-item -->
-                    
-                </li>
-                <li>
-                	
-                    <div class="portfolio-item">
-                    
-                        <div class="portfolio-item-preview">			
-                       
-                            <img src="_content/portfolio/385x500-4.png" alt="">                            
-                            
-                            <div class="portfolio-item-overlay">
-                            
-                                <div class="portfolio-item-overlay-actions">
-                                    
-                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="_content/portfolio/385x500-4.png">
-                                        <i class="ifc-zoom_in"></i>
-                                    </a>
-                                    
-                                    <a class="portfolio-item-link" href="portfolio-item.html">
-                                        <i class="ifc-link"></i>
-                                    </a>
-                                
-                                </div><!-- end .portfolio-item-overlay-actions -->
-                            
-                            </div><!-- end .portfolio-item-overlay -->
-                        
-                        </div><!-- end .portfolio-item-preview -->
-                        
-                        <div class="portfolio-item-description">
-                        
-                            <h3>Fusce arcu arcu</h3>
-                        
-                        </div><!-- end .portfolio-item-description -->
-                    
-                    </div><!-- end .portfolio-item -->
-                    
-                </li>
-                <li>
-                	
-                    <div class="portfolio-item">
-                    
-                        <div class="portfolio-item-preview">			
-                       
-                            <img src="_content/portfolio/385x500-5.png" alt="">                            
-                            
-                            <div class="portfolio-item-overlay">
-                            
-                                <div class="portfolio-item-overlay-actions">
-                                    
-                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="_content/portfolio/385x500-5.png">
-                                        <i class="ifc-zoom_in"></i>
-                                    </a>
-                                    
-                                    <a class="portfolio-item-link" href="portfolio-item.html">
-                                        <i class="ifc-link"></i>
-                                    </a>
-                                
-                                </div><!-- end .portfolio-item-overlay-actions -->
-                            
-                            </div><!-- end .portfolio-item-overlay -->
-                        
-                        </div><!-- end .portfolio-item-preview -->
-                        
-                        <div class="portfolio-item-description">
-                        
-                            <h3>Sed accumsan orci</h3>
-                        
-                        </div><!-- end .portfolio-item-description -->
-                    
-                    </div><!-- end .portfolio-item -->
-                    
-                </li>
-            </ul><!-- end .portfolio-strip -->
-
-
-
-
-
-
-<!--
-
 <tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.dress'];
                       catalog python:context.portal_catalog">
-  <div class="milestone-slider">
-    <ul class="slides">
+
+<div class="headline dress">
+<h1>Dress</h1>
+</div>
+
+            <ul class="portfolio-strip fixed">
+
       <tal:repeat repeat="contentId registry/split">
         <tal:getItem define="item python:catalog(id=contentId)[0]">
-          <li>
-            <div class="milestone alt-2">
-              <img tal:attributes="src item/imageUrl;
-                                   alt item/Title" />
-              <div class="overlayq"></div>
-              <div class="milestone-content" style="color:#333">
-                <span class="milestone-value" data-stop="342" data-speed="2000"></span>
-                <div class="milestone-description" style="color:#333">Phone<strong>calls</strong></div>
-              </div>
-            </div>
-          </li>
+
+            	<li>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-preview">			
+                            <img tal:attributes="src item/imageUrl; alt item/Title">                            
+                            <div class="portfolio-item-overlay">
+                                <div class="portfolio-item-overlay-actions">
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" tal:attributes="href item/imageUrl">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    <a class="portfolio-item-link" tal:attributes="href item/getURL">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                            </div><!-- end .portfolio-item-overlay -->
+                        </div><!-- end .portfolio-item-preview -->
+                        <div class="portfolio-item-description">
+                            <h3 tal:content="item/Title">Lorem ipsum dolor</h3>
+                        </div><!-- end .portfolio-item-description -->
+                    </div><!-- end .portfolio-item -->
+                </li>
         </tal:getItem>
       </tal:repeat>
-    </ul>
-  </div>
+            </ul><!-- end .portfolio-strip -->
 </tal:registry>
--->
