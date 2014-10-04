@@ -1,0 +1,8 @@
+<div id="homepageviewletmanager"
+     tal:condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+
+    <tal:viewlets repeat="viewlet view/viewlets">
+           <tal:viewlet replace="structure python:viewlet.render()" />
+    </tal:viewlets>
+
+</div>

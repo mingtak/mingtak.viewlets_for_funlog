@@ -1,8 +1,28 @@
-<div>
-  <ul tal:define="registry string:mingtak.viewlets.headerfootersetting.IHeaderFooterSetting">
-    <li tal:content="python:context.portal_registry['%s.socialFacebook' % registry]"></li>
-    <li tal:content="python:context.portal_registry['%s.socialGooglePlus' % registry]"></li>
-    <li tal:content="python:context.portal_registry['%s.socialTwitter' % registry]"></li>
-    <li tal:content="python:context.portal_registry['%s.socialEmail' % registry]"></li>
-  </ul>
-</div>
+<div class="row">
+  <div class="span8" id="header-top-widgeat-area-1">
+    <div class="widget ewf_widget_contact_info">
+<strong>Price Asking, asking best price!</strong>
+    </div><!-- end .ewf_widget_contact_info -->
+  </div><!-- end .span8 -->
+
+
+  <div class="span4" id="header-top-widgeat-area-2">
+    <div class="widget ewf_widget_social_media">
+      <div class="fixed" tal:define="portal_registry python:context.portal_registry;
+                                     registry string:mingtak.viewlets.headerfootersetting.IHeaderFooterSetting">
+        <a class="facebook-icon social-icon" tal:attributes="href python:portal_registry['%s.socialFacebook' % registry]" target=_blank>
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a class="twitter-icon social-icon" tal:attributes="href python:portal_registry['%s.socialGooglePlus' % registry]" target=_blank>
+          <i class="fa fa-google-plus"></i>
+        </a>
+        <a class="dribble-icon social-icon" tal:attributes="href python:portal_registry['%s.socialTwitter' % registry]" target=_blank>
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a class="pinterest-icon social-icon" tal:attributes="href python:portal_registry['%s.socialEmail' % registry]" target=_blank>
+          <i class="fa fa-envelope-o"></i>
+        </a>
+      </div>
+    </div><!-- end .ewf_widget_social_media -->
+  </div><!-- end .span4 -->
+</div><!-- end row -->

@@ -27,6 +27,36 @@ class IPromotionSetting(form.Schema, IImageScaleTraversable):
         required=False,
     )
 
+    vacation = schema.Text(
+        title=_(u"Vacation special product list"),
+        description=_(u"List format is ....???"),
+        required=False,
+    )
+
+    dress = schema.Text(
+        title=_(u"Dress product list"),
+        description=_(u"List format is ....???"),
+        required=False,
+    )
+
+    beauty = schema.Text(
+        title=_(u"Beauty product list"),
+        description=_(u"List format is ....???"),
+        required=False,
+    )
+
+    health = schema.Text(
+        title=_(u"Haelth product list"),
+        description=_(u"List format is ....???"),
+        required=False,
+    )
+
+    entertainment = schema.Text(
+        title=_(u"Entertainment product list"),
+        description=_(u"List format is ....???"),
+        required=False,
+    )
+
 
 class PromotionSetting(Container):
     grok.implements(IPromotionSetting)

@@ -6,11 +6,23 @@
 
 
 <!-- necessary, show in /@@manager-viewlets -->
+<!-- no set layer="theme.ladypriceasking.interfaces.ICustomTheme" -->
 <browser:viewletManager
 name="IWebsiteTop"
 provides=".viewlets.IWebsiteTop"
 permission="zope2.View"
 class="plone.app.viewletmanager.manager.OrderedViewletManager"
+template="templates/iwebsitetop.pt"
+/>
+
+
+<!-- no set layer="theme.ladypriceasking.interfaces.ICustomTheme" -->
+<browser:viewletManager
+name="IHomePage"
+provides=".viewlets.IHomePage"
+permission="zope2.View"
+class="plone.app.viewletmanager.manager.OrderedViewletManager"
+template="templates/ihomepage.pt"
 />
 
 

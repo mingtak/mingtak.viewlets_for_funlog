@@ -1,0 +1,47 @@
+<tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.vacation'];
+                      catalog python:context.portal_catalog">
+
+            <div class="fullwidth-section" id="bg-8">
+				<div class="fullwidth-section-content">
+                    <div class="row">
+                    	<div class="span12">	                        
+                            <div class="headline">
+                                <h1>Our Portfolio</h1>
+                            	<h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h3>
+                            </div><!-- end .headline -->
+
+<tal:repeatUl repeat="ul python:range(len(registry.split())/4)">
+                            <ul class="portfolio-grid fixed">
+<tal:get4Line define="fourLine python:registry.split()[repeat['ul'].index*4:4+repeat['ul'].index*4]">
+      <tal:repeat repeat="contentId fourLine">
+        <tal:getItem define="item python:catalog(id=contentId)[0]">
+                                <li>
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-item-preview">	
+                                            <img tal:attributes="src item/imageUrl; alt item/Title">
+                                        </div><!-- end .portfolio-item-preview -->
+                                        <div class="portfolio-item-description">
+                                            <p>
+                                            	<a tal:attributes="href item/getURL" tal:content="item/Title">Lorem ipsum dolor</a>
+                                            </p>
+                                            <a tal:attributes="href item/buyUrl" target="_blank">
+                                              <p class="text-highlight">Buy Now</p>
+                                            </a>
+                                        </div><!-- end .portfolio-item-description -->
+                                    </div><!-- end .portfolio-item -->
+                                </li>
+        </tal:getItem>
+      </tal:repeat>
+</tal:get4Line>
+                            </ul><!-- end .portfolo-grid -->
+</tal:repeatUl>
+                            
+                        </div><!-- end .span12 -->
+                    </div><!-- end .row -->                                        
+                
+                </div><!-- end .fullwidth-section-content -->
+
+            </div><!-- end .fullwidth-section -->
+
+
+</tal:registry>

@@ -1,0 +1,22 @@
+<tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.onSale'];
+                      catalog python:context.portal_catalog">
+  <div class="milestone-slider">
+    <ul class="slides">
+      <tal:repeat repeat="contentId registry/split">
+        <tal:getItem define="item python:catalog(id=contentId)[0]">
+          <li>
+            <div class="milestone alt-2">
+              <img tal:attributes="src item/imageUrl;
+                                   alt item/Title" />
+              <div class="overlayq"></div>
+              <div class="milestone-content" style="color:#333">
+                <span class="milestone-value" data-stop="342" data-speed="2000"></span>
+                <div class="milestone-description" style="color:#333">Phone<strong>calls</strong></div>
+              </div>
+            </div><!-- end .milestone -->
+          </li>
+        </tal:getItem>
+      </tal:repeat>
+    </ul>
+  </div><!-- end .milestone-slider -->
+</tal:registry>
