@@ -11,12 +11,33 @@ IBelowContentBody, IBelowContent, IPortalFooter, IScripts
 from zope.viewlet.interfaces import IViewletManager
 
 
-# Add viewlet manager, IWebsiteTop
+# Add viewlet manager, IGoogleAD, grok way
+class IGoogleAdResponsive(grok.ViewletManager):
+    grok.name('IGoogleAdResponsive')
+
+# Add viewlet manager, IAddThis, grok way
+class IAddThis(grok.ViewletManager):
+    grok.name('IAddThis')
+
+# Add viewlet manager, IDisqus, grok way
+class IDisqus(grok.ViewletManager):
+    grok.name('IDisqus')
+
+# Add viewlet manager, IMaybeYouLike, grok way
+class IMaybeYouLike(grok.ViewletManager):
+    grok.name('IMaybeYouLike')
+
+# Add viewlet manager, ICollection, ZCML way
+class ICollection(IViewletManager):
+    """A viewlet manager for collection
+    """
+
+# Add viewlet manager, IHomePage, ZCML way
 class IHomePage(IViewletManager):
     """A viewlet manager for homepage
     """
 
-# Add viewlet manager, IWebsiteTop
+# Add viewlet manager, IWebsiteTop, ZCML way
 class IWebsiteTop(IViewletManager):
     """A viewlet manager
     """
@@ -37,3 +58,27 @@ class HomePageVacation(grok.Viewlet):
 
 class HomePageDress(grok.Viewlet):
     grok.viewletmanager(IHomePage)
+
+class HomePageBeauty(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+class HomePageHealth(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+class HomePageEntertainment(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+class CollectionContent(grok.Viewlet):
+    grok.viewletmanager(ICollection)
+
+class AddThisViewlet(grok.Viewlet):
+    grok.viewletmanager(IAddThis)
+
+class Disqus(grok.Viewlet):
+    grok.viewletmanager(IDisqus)
+
+class MaybeYouLike(grok.Viewlet):
+    grok.viewletmanager(IMaybeYouLike)
+
+class GoogleAdResponsive(grok.Viewlet):
+    grok.viewletmanager(IGoogleAdResponsive)

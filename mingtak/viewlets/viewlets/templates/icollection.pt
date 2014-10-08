@@ -1,0 +1,8 @@
+<div id="icollectionviewletmanager"
+     tal:condition="python:not request['AUTHENTICATED_USER'].has_role('Manager') and context.portal_type == 'Collection'">
+
+    <tal:viewlets repeat="viewlet view/viewlets">
+           <tal:viewlet replace="structure python:viewlet.render()" />
+    </tal:viewlets>
+
+</div>

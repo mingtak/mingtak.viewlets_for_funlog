@@ -1,0 +1,98 @@
+<tal:isCollection condition="python:context.portal_type == 'Collection'">
+            <div id="page-header">
+
+                <div class="row">
+                        <div class="span12">
+
+                        <i class="ifc-gallery"></i>
+                        <h1 tal:content="context/Title">Portfolio</h1>
+
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+
+            </div><!-- end #page-header -->
+
+
+
+
+<div id="collection_viewlet">
+<tal:repeat tal:repeat="item context/results">
+
+
+
+
+            
+            <div class="row">
+            	<div class="span8">
+                	
+                    <div class="portfolio-item-2">
+                    	
+                        <div class="row">
+                        	<div class="span3">
+                            	
+                                <div class="portfolio-item-preview">
+                                
+                                	<img class="responsive-img"
+                                             tal:attributes="src item/imageUrl;
+                                                             alt item/Title">
+                                    
+                                    <div class="portfolio-item-overlay">
+                                    	
+                                        <div class="portfolio-item-overlay-actions">
+                                        	
+                                            <a class="magnificPopup-gallery portfolio-item-zoom"
+                                               tal:attributes="href item/imageUrl">
+                                                <i class="ifc-zoom_in"></i>
+                                            </a>
+                                            
+                                        </div><!-- end .portfolio-item-overlay-actions -->
+                                        
+                                    </div><!-- end .portfolio-item-overlay -->
+                                
+                                </div><!-- end .portfolio-item-preview -->
+                                
+                            </div><!-- end .span3 -->
+                            <div class="span5">
+                            	
+                                <h3>
+                                	<a tal:attributes="href string:/product/${item/id}" tal:content="item/Title">Product Name</a>
+                                </h3>
+                                
+                                
+                                <p tal:content="item/Description" />
+                                
+                                
+                                <div class="fixed">                            
+<p>
+<span tal:content="string:SKU: ${item/sku}"/><br>
+<del tal:condition="python:item.salePrice < item.price and item.salePrice > 0.0" tal:content="string:Price: ${item/currency} ${item/price}"/>
+  <br tal:condition="python:item.salePrice < item.price and item.salePrice > 0.0">
+<span tal:condition="python:item.salePrice == item.price or item.salePrice == 0.0" tal:content="string:Price: ${item/currency} ${item/price}" style="color:red"/>
+  <br tal:condition="python:item.salePrice == item.price or item.salePrice == 0.0">
+<span tal:condition="python:item.salePrice < item.price and item.salePrice > 0.0" tal:content="string:Sale Price: ${item/currency} ${item/salePrice}" style="color:red"/>
+  <br tal:condition="python:item.salePrice < item.price and item.salePrice > 0.0">
+</p>
+                                </div>
+                                
+                                <p class="text-right hidden-tablet">
+                                    <a class="btn" tal:attributes="href string:/product/${item/id}">See More<i class="ifc-fast_forward"></i></a>
+                                    <a class="btn alt" tal:attributes="href item/buyUrl" target="_blank">Buy Now<i class="ifc-fast_forward"></i></a>
+                                </p>
+                                
+                            </div><!-- end .span5 -->
+                        </div><!-- end .row -->
+                        
+                    </div><!-- end .portfolio-item-2 -->
+                    
+                </div><!-- end .span8 -->
+            </div><!-- end .row -->
+
+
+
+
+
+
+
+</tal:repeat>
+</div>
+</tal:isCollection>

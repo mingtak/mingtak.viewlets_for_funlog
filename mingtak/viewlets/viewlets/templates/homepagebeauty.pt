@@ -1,12 +1,12 @@
-<tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.dress'];
+<tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.beauty'];
                       catalog python:context.portal_catalog">
 
-            <div class="fullwidth-section" id="bg-6">
+            <div class="fullwidth-section" id="bg-3">
 				<div class="fullwidth-section-content">
                     <div class="row">
                     	<div class="span12">	                        
                             <div class="headline">
-                                <h1>Dress</h1>
+                                <h1>Beauty</h1>
                             	<h3>還沒設Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h3>
                             </div><!-- end .headline -->
 
@@ -35,8 +35,7 @@
 </tal:get4Line>
                             </ul><!-- end .portfolo-grid -->
 </tal:repeatUl>
-<br/><br/><br/>
-                            
+<br/><br/><br/>                            
                         </div><!-- end .span12 -->
                     </div><!-- end .row -->                                        
                 

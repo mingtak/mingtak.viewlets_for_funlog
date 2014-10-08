@@ -1,5 +1,11 @@
 <tal:registry define="registry python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.onSale'];
                       catalog python:context.portal_catalog">
+
+<div class="fullwidth-section parallax parallax-enabled" id="bg-2">
+<div class="row">
+<br>
+<h1>On Sale</h1>
+
   <div class="milestone-slider">
     <ul class="slides">
       <tal:repeat repeat="contentId registry/split">
@@ -19,4 +25,6 @@
       </tal:repeat>
     </ul>
   </div><!-- end .milestone-slider -->
+
+</div></div>
 </tal:registry>

@@ -1,5 +1,5 @@
 <div id="homepageviewletmanager"
-     tal:condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+     tal:condition="python:not request['AUTHENTICATED_USER'].has_role('Manager') and context.portal_type == 'Plone Site'">
 
     <tal:viewlets repeat="viewlet view/viewlets">
            <tal:viewlet replace="structure python:viewlet.render()" />
