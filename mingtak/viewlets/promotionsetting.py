@@ -21,39 +21,101 @@ class IPromotionSetting(form.Schema, IImageScaleTraversable):
     """
     Promotional product setting
     """
-    onSale = schema.Text(
-        title=_(u"On sale product list"),
-        description=_(u"List format is ....???"),
+    heroImage_1 = schema.URI(
+        title=_(u"Hero promotion image 1 url"),
+        description=_(u"must inculde 'http://'"),
         required=False,
     )
 
-    vacation = schema.Text(
-        title=_(u"Vacation special product list"),
-        description=_(u"List format is ....???"),
+    heroDescription_1 = schema.Text(
+        title=_(u"Hero promotion 1 text"), 
+        description=_(u"Using html language"),
+        required=False, 
+    )
+
+    heroImage_2 = schema.URI(
+        title=_(u"Hero promotion image 2 url"),
+        description=_(u"must inculde 'http://'"),
+        required=False, 
+    )
+
+    heroDescription_2 = schema.Text(
+        title=_(u"Hero promotion 2 text"),
+        description=_(u"Using html language"),
         required=False,
     )
 
-    dress = schema.Text(
-        title=_(u"Dress product list"),
-        description=_(u"List format is ....???"),
+    heroImage_3 = schema.URI(
+        title=_(u"Hero promotion image 3 url"),
+        description=_(u"must inculde 'http://'"),
         required=False,
     )
 
-    beauty = schema.Text(
-        title=_(u"Beauty product list"),
-        description=_(u"List format is ....???"),
+    heroDescription_3 = schema.Text(
+        title=_(u"Hero promotion 3 text"),
+        description=_(u"Using html language"),
         required=False,
     )
 
-    health = schema.Text(
-        title=_(u"Haelth product list"),
-        description=_(u"List format is ....???"),
+    heroImage_4 = schema.URI(
+        title=_(u"Hero promotion image 4 url"),
+        description=_(u"must inculde 'http://'"),
         required=False,
     )
 
-    entertainment = schema.Text(
-        title=_(u"Entertainment product list"),
-        description=_(u"List format is ....???"),
+    heroDescription_4 = schema.Text(
+        title=_(u"Hero promotion 4 text"),
+        description=_(u"Using html language"),
+        required=False,
+    )
+
+    heroImage_5 = schema.URI(
+        title=_(u"Hero promotion image 5 url"),
+        description=_(u"must inculde 'http://'"),
+        required=False,
+    )
+
+    heroDescription_5 = schema.Text(
+        title=_(u"Hero promotion 5 text"),
+        description=_(u"Using html language"),
+        required=False,
+    )
+
+    promotionBanner = schema.Text(
+        title=_(u"Prometion Banner"),
+        description=_(u"Using html language"),
+        required=False,
+    )
+
+
+
+    promotionTab_1 = schema.Text(
+        title=_(u"Promotion tab 1 on homepage"),
+        description=_(u"First line is catalog name, other line is products id"),
+        required=False,
+    )
+
+    promotionTab_2 = schema.Text(
+        title=_(u"Promotion tab 2 on homepage"),
+        description=_(u"First line is catalog name, other line is products id"),
+        required=False,
+    )
+
+    promotionTab_3 = schema.Text(
+        title=_(u"Promotion tab 3 on homepage"),
+        description=_(u"First line is catalog name, other line is products id"),
+        required=False,
+    )
+
+    promotionTab_4 = schema.Text(
+        title=_(u"Promotion tab 4 on homepage"),
+        description=_(u"First line is catalog name, other line is products id"),
+        required=False,
+    )
+
+    promotionTab_5 = schema.Text(
+        title=_(u"Promotion tab 5 on homepage"),
+        description=_(u"First line is catalog name, other line is products id"),
         required=False,
     )
 

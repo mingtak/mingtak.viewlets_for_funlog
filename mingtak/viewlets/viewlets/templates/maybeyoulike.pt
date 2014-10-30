@@ -1,1 +1,65 @@
-<h1>Maybe you like, Viewlet</h1>
+            <!-- ========================================= RECENTLY VIEWED ========================================= -->
+<section class="wow fadeInUp"
+         tal:define="catalog python:context.portal_catalog;
+                     brain python:catalog({'Subject':context.subject,
+                                           'aspectRatio':{'query':[0.7,1.15],'range':'min:max'},
+                                           'imageSize':{'query':8192, 'range':'min'},},
+                                          sort_on='imageSize', sort_order='reverse')[0:30];
+                     randomBrain python:modules['random'].shuffle(brain)">
+	<div class="no-container">
+		<div class="carousel-holder hover">
+			
+			<div class="title-nav">
+				<h2 class="h1">maybe you like</h2>
+				<div class="nav-holder">
+					<a href="#prev" data-target="#owl-recently-viewed-2" class="slider-prev btn-prev fa fa-angle-left"></a>
+					<a href="#next" data-target="#owl-recently-viewed-2" class="slider-next btn-next fa fa-angle-right"></a>
+				</div>
+			</div><!-- /.title-nav -->
+
+			<div id="owl-recently-viewed-2" class="owl-carousel product-grid-holder">
+				<div class="no-margin carousel-item product-item-holder size-medium hover"
+                                     tal:repeat="item python:brain[0:10]">
+					<div class="product-item">
+                                                <tal:checkDiscount tal:condition="python:item.discount > 0">
+                                                  <div class="ribbon red"><span>onsale</span></div>
+                                                  <div class="ribbon blue" tal:condition="python:item.discount > 0.4"><span>deep discount</span></div>
+                                                </tal:checkDiscount>
+						<div class="image"
+                                                     tal:define="imgObj item/getObject;
+                                                                 srcString imgObj/@@images/productImage/mini;
+                                                                 src python:srcString.split('src=&quot;')[1].split('&quot;')[0]">
+							<img src="/++theme++theme.ladypriceasking/assets/images/blank.gif"
+                                                             tal:attributes="data-echo src" />
+						</div>
+						<div class="body">
+							<div class="title">
+								<a tal:attributes="href item/getURL" tal:content="item/Title" />
+							</div>
+						</div>
+						<div class="prices">
+							<div class="price-current text-right"
+                                                             tal:content="python:'%s %s' %
+                                                                          (item.currency, item.salePrice if item.discount > 0 else item.price)" />
+						</div>
+						<div class="hover-area">
+							<div class="add-cart-button">
+								<a class="le-button" target="_blank"
+                                                                   tal:attributes="href item/buyUrl">buy now</a>
+							</div>
+							<div class="wish-compare">
+								<a class="btn-add-to-wishlist" href="#">Add to Wishlist</a>
+								<a class="btn-add-to-compare" href="#">Compare</a>
+							</div>
+						</div>
+					</div><!-- /.product-item -->
+				</div><!-- /.product-item-holder -->
+
+
+
+			</div><!-- /#recently-carousel -->
+
+		</div><!-- /.carousel-holder -->
+	</div><!-- /.container -->
+</section><!-- /#recently-reviewd -->
+<!-- ========================================= RECENTLY VIEWED : END ========================================= -->

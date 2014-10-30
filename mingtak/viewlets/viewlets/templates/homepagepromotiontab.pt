@@ -1,0 +1,106 @@
+<tal:registry define="promotionTab_1 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionTab_1'];
+                      promotionTab_2 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionTab_2'];
+                      promotionTab_3 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionTab_3'];
+                      promotionTab_4 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionTab_4'];
+                      promotionTab_5 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionTab_5'];
+                      promotionTab python:[promotionTab_1, promotionTab_2, promotionTab_3, promotionTab_4, promotionTab_5,];
+                      catalog python:context.portal_catalog;">
+
+
+
+
+<div id="products-tab" class="wow fadeInUp">
+    <div class="container">
+        <div class="tab-holder">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" >
+
+
+<tal:repeat repeat="tab promotionTab">
+                <li tal:condition="python:tab or tab == ''"
+                    tal:attributes="class python:'active' if repeat['tab'].start else '';">
+                    <a data-toggle="tab" tal:content="python:tab.split('\n')[0]"
+                       tal:attributes="href python:'#%s' % tab.split('\n')[0]">featured</a>
+                </li>
+</tal:repeat>
+            </ul>
+
+
+
+
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <tal:repeat repeat="tabContent promotionTab">
+                <div tal:condition="python:tabContent and tabContent.split()"
+                     tal:attributes="class python:'tab-pane active' if repeat['tabContent'].start else 'tab-pane';
+                                     id python:tabContent.split()[0]">
+
+                    <div class="product-grid-holder">
+
+  <tal:repeatItems repeat="itemId python:tabContent.split()[1:]">
+
+<div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
+
+                            <div class="product-item" tal:define="item python:catalog(id=itemId)[0].getObject()">
+                                <div class="ribbon red"
+                                     tal:condition="python:item.salePrice < item.price and item.salePrice > 0">
+                                       <span>onsale</span>
+                                </div> 
+                                <div class="image banner">
+                                    <img tal:replace="structure item/@@images/productImage/mini" />
+                                </div>
+                                <div class="body">
+                                    <div class="label-discount clear"></div>
+                                    <div class="title">
+                                        <a tal:attributes="href string:product/${item/id}"
+                                           tal:content="item/Title" />
+                                    </div>
+<!--                                    <div class="brand">acer</div> -->
+                                </div>
+                                <div class="prices">
+                                    <div class="price-prev"
+                                         tal:condition="python:item.salePrice < item.price and item.salePrice > 0">
+                                        <s tal:content="item/price">$1399.00</s>
+                                    </div>
+                                    <div class="price-current pull-right"
+                                         tal:content="python:'%s %s' %
+                                                             (item.currency ,
+                                                                 (item.salePrice if item.salePrice < item.price and item.salePrice > 0
+                                                                                 else item.price))"> price
+                                    </div>
+                                </div>
+                                <div class="hover-area">
+                                    <div class="add-cart-button">
+                                        <a target="_blank" tal:attributes="href item/buyUrl" class="le-button">Buy Now</a>
+                                    </div>
+<!--                                    <div class="wish-compare">
+                                        <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
+                                        <a class="btn-add-to-compare" href="#">compare</a>
+                                    </div> -->
+                                </div>
+                            </div>
+    </div>
+  </tal:repeatItems>
+
+
+                    <div class="loadmore-holder text-center">
+                        <a class="btn-loadmore" tal:attributes="href python:'/productlist?catalog=%s&name=%s' %
+                                                                             (tabContent.split()[0].lower(), tabContent.split()[0].lower())">
+                            <i class="fa fa-plus"></i>
+                            load more products</a>
+                    </div>
+
+                 </div>
+               </div>
+</tal:repeat>
+            </div>
+            
+            
+        </div>
+    </div>
+
+</div>
+
+
+</tal:registry>

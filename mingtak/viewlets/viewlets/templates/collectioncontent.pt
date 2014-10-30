@@ -59,7 +59,7 @@
                                 </h3>
                                 
                                 
-                                <p tal:content="item/Description" />
+                                <p tal:content="structure item/Description" />
                                 
                                 
                                 <div class="fixed">                            

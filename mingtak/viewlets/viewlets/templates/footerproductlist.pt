@@ -1,0 +1,111 @@
+<div id="plone-footer-product-list" tal:define="catalog python:context.portal_catalog"
+     tal:condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+
+
+    <div class="container">
+        <div class="row no-margin widgets-row">
+            <div class="col-xs-12  col-sm-4 no-margin-left">
+                <!-- ============================================================= Footer widget one ============================================================= -->
+<div class="widget"
+     tal:define="brain python:catalog({'aspectRatio':1.0,
+                                       'salePrice':{'query':250, 'range':'min'},},
+                                      sort_on='discount', sort_order='reverse')[0:];
+                 randomList python:modules['random'].shuffle(brain)">
+    <h2>BOUTIQUE</h2>
+    <div class="body">
+        <ul>
+            <li tal:repeat="item python:brain[0:3]">
+                <div class="row">                        
+                    <div class="col-xs-12 col-sm-9 no-margin">
+                        <a tal:attributes="href string:/product/${item/id}" tal:content="item/Title">PowerShot Elph 115 16MP Digital Camera</a>
+                        <div class="price">
+                            <div class="price-prev" tal:content="string:${item/currency} ${item/price}">$2000</div>
+                            <div class="price-current" tal:content="string:${item/currency} ${item/salePrice}">$1873</div>
+                        </div>
+                    </div>  
+
+                    <div class="col-xs-12 col-sm-3 no-margin" tal:define="getObject item/getObject">
+                        <a tal:attributes="href string:/prudect/${item/id}" class="thumb-holder">
+                             <img tal:replace="structure getObject/@@images/productImage/custom_1" />
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div><!-- /.body -->
+</div> <!-- /.widget -->
+<!-- ============================================================= Footer Widget one : END ============================================================= -->            </div><!-- /.col -->
+
+
+
+
+
+
+            <div class="col-xs-12 col-sm-4 ">
+                <!-- ============================================================= Footer Widget two ============================================================= -->
+<div class="widget"
+     tal:define="brain python:catalog({'aspectRatio':1.0,
+                                       'Subject':'jewelry',
+                                       'discount':{'query':0.5,'range':'min'},},
+                                      sort_on='discount', sort_order='reverse')[0:10];
+                 randomList python:modules['random'].shuffle(brain)">
+    <h2>DEEP DISCOUNT</h2>
+    <div class="body">
+        <ul>
+            <li tal:repeat="item python:brain[0:3]">
+                <div class="row">                        
+                    <div class="col-xs-12 col-sm-9 no-margin">
+                        <a tal:attributes="href string:/product/${item/id}" tal:content="item/Title">PowerShot Elph 115 16MP Digital Camera</a>
+                        <div class="price">
+                            <div class="price-prev" tal:content="string:${item/currency} ${item/price}">$2000</div>
+                            <div class="price-current" tal:content="string:${item/currency} ${item/salePrice}">$1873</div>
+                        </div>
+                    </div>  
+
+                    <div class="col-xs-12 col-sm-3 no-margin" tal:define="getObject item/getObject">
+                        <a tal:attributes="href string:/prudect/${item/id}" class="thumb-holder">
+                             <img tal:replace="structure getObject/@@images/productImage/custom_1" />
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div><!-- /.body -->
+</div> <!-- /.widget -->
+
+
+
+<!-- ============================================================= Footer Widget two : END ============================================================= -->            </div><!-- /.col -->
+
+
+
+
+
+
+            <div class="col-xs-12 col-sm-4 ">
+                <!-- ============================================================= TOP RATED PRODUCTS ============================================================= -->
+
+<div class="widget">
+    <h2>GOOGLE AD</h2>
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ResponsiveAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9621066722313042"
+     data-ad-slot="6313067471"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<!-- ============================================================= TOP RATED PRODUCTS : END ============================================================= -->            </div><!-- /.col -->
+
+        </div><!-- /.widgets-row-->
+    </div><!-- /.container -->
+
+
+</div>

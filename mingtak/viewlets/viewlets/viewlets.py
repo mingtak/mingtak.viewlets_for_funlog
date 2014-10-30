@@ -50,6 +50,16 @@ grok.templatedir('templates')
 class SocialList(grok.Viewlet):
     grok.viewletmanager(IWebsiteTop)
 
+class HomePageHero(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+class HomePagePromotionBanner(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+class HomePagePromotionTab(grok.Viewlet):
+    grok.viewletmanager(IHomePage)
+
+"""
 class HomePageOnSale(grok.Viewlet):
     grok.viewletmanager(IHomePage)
 
@@ -70,6 +80,7 @@ class HomePageEntertainment(grok.Viewlet):
 
 class CollectionContent(grok.Viewlet):
     grok.viewletmanager(ICollection)
+"""
 
 class AddThisViewlet(grok.Viewlet):
     grok.viewletmanager(IAddThis)
@@ -82,3 +93,9 @@ class MaybeYouLike(grok.Viewlet):
 
 class GoogleAdResponsive(grok.Viewlet):
     grok.viewletmanager(IGoogleAdResponsive)
+
+class FooterProductList(grok.Viewlet):
+    grok.viewletmanager(IPortalFooter)
+
+class GoogleAdInFooter(grok.Viewlet):
+    grok.viewletmanager(IPortalFooter)

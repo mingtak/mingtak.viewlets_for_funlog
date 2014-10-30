@@ -1,0 +1,3 @@
+<tal:registry define="promotionBanner python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.promotionBanner'];">
+  <section tal:replace="structure promotionBanner"/>
+</tal:registry>

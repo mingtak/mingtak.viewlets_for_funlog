@@ -26,4 +26,19 @@
     class=".cjconfiglet.CjControlPanelView"
     />
 -->
+
+<!-- BrowserView -->
+  <browser:page
+    for="*"
+    name="productlist"
+    permission="zope2.View"
+    class=".productlist.ProductList" />
+
+<!-- Test BrwoserView, 測試用，平常不開
+  <browser:page
+    for="*"
+    name="testFunction"
+    permission="cmf.ManagePortal"
+    class=".testfunction.TestFunction" />
+-->
 </configure>

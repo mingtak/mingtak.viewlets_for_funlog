@@ -1,0 +1,46 @@
+<tal:registry define="heroImage1 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroImage_1'];
+                      heroDescription1 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroDescription_1'];
+                      heroImage2 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroImage_2'];
+                      heroDescription2 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroDescription_2'];
+                      heroImage3 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroImage_3'];
+                      heroDescription3 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroDescription_3'];
+                      heroImage4 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroImage_4'];
+                      heroDescription4 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroDescription_4'];
+                      heroImage5 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroImage_5'];
+                      heroDescription5 python:context.portal_registry['mingtak.viewlets.promotionsetting.IPromotionSetting.heroDescription_5'];">
+
+  <div id="hero_collection">
+	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+
+		<div class="item" tal:condition="python:heroImage1 and 'http://' in heroImage1"
+                     tal:attributes="style string:background-image: url(${heroImage1});">
+                    <div tal:replace="structure heroDescription1" />
+		</div>
+
+                <div class="item" tal:condition="python:heroImage2 and 'http://' in heroImage2"
+                     tal:attributes="style string:background-image: url(${heroImage2});">
+                    <div tal:replace="structure heroDescription2" />
+                </div>
+
+                <div class="item" tal:condition="python:heroImage3 and 'http://' in heroImage3"
+                     tal:attributes="style string:background-image: url(${heroImage3});">
+                    <div tal:replace="structure heroDescription3" />
+                </div>
+
+                <div class="item" tal:condition="python:heroImage4 and 'http://' in heroImage4" 
+                     tal:attributes="style string:background-image: url(${heroImage4});">
+                    <div tal:replace="structure heroDescription4" />
+                </div>
+
+                <div class="item" tal:condition="python:heroImage5 and 'http://' in heroImage5"
+                     tal:attributes="style string:background-image: url(${heroImage5});">
+                    <div tal:replace="structure heroDescription5" />
+                </div>
+
+
+        </div>
+  </div>
+
+
+
+</tal:registry>

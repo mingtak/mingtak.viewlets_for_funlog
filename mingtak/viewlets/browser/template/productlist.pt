@@ -1,0 +1,243 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="mingtak.viewlets">
+<body>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+<div id="productlist-content">
+
+
+<section id="gaming" tal:define="start python:int(request.get('start', 0))">
+
+
+    <div class="grid-list-products">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ResponsiveAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9621066722313042"
+     data-ad-slot="6313067471"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <h2 class="section-title" tal:content="python:request['name'].replace('_', ' ')">Gaming</h2>
+
+        
+        <div class="control-bar">
+            <div class="grid-list-buttons">
+                <ul>
+                    <li class="grid-list-button-item active">
+                      <a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a>
+                    </li>
+                    <li class="grid-list-button-item">
+                      <a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.control-bar -->
+
+
+
+        <div class="tab-content">
+            <div id="grid-view" class="products-grid fade tab-pane">
+                
+                <div class="product-grid-holder">
+                    <div class="row no-margin">
+                        
+                        <div class="col-xs-12 col-sm-4 no-margin product-item-holder hover" tal:repeat="item python:view.brain[start:start+30]">
+                            <div class="product-item">
+                                <div class="ribbon red" tal:condition="python:item.discount > 0"><span>onsale</span></div>
+                                <div class="ribbon blue" tal:condition="python:item.discount > 0.4"><span>deep discount</span></div>
+
+                                <div class="image banner wow fadeInUp" tal:define="obj item/getObject">
+                                  <img tal:replace="structure obj/@@images/productImage/mini" />
+                                </div>
+                                <div class="body">
+                                    <div class="label-discount green"
+                                         tal:condition="python:item.discount > 0"
+                                         tal:content="python:'%s%% off' % int(item.discount*100)" />
+                                    <div class="title">
+                                        <a tal:attributes="href string:/product/${item/id}" tal:content="item/Title" />
+                                    </div>
+                                </div>
+                                <div class="prices">
+                                    <div class="price-prev"
+                                         tal:content="structure python:'price' if item.discount == 0 else 
+                                                                       '<s>%s %s</s>' % (item.currency, item.price)">$1399.00</div>
+                                    <div class="price-current pull-right"
+                                         tal:content="python:'%s %s' % (item.currency, item.salePrice if item.discount>0
+                                                                        else item.price)" />
+                                </div>
+                                <div class="hover-area">
+                                    <div class="add-cart-button">
+                                        <a tal:attributes="href item/buyUrl" class="le-button" target="_blank">buy now</a>
+                                    </div>
+                                    <div class="wish-compare">
+                                        <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
+                                        <a class="btn-add-to-compare" href="#">compare</a>
+                                    </div>
+
+                                </div>
+                            </div><!-- /.product-item -->
+                        </div><!-- /.product-item-holder -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.product-grid-holder -->
+
+
+                <div class="pagination-holder">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 text-left">
+                            <ul class="pagination ">
+<li><a tal:attributes="href python:'?catalog=%s&name=%s' % (request['catalog'], request['name'])">&lt;&lt;</a></li>
+                                <li tal:condition="python:start>=30">
+                                  <a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' %
+                                                                 (request['catalog'], 
+                                                                  request['name'], 
+                                                                  start-30)">&lt;</a>
+                                </li>
+
+
+
+                                <li class="current"><a tal:content="python:start/30 + 1">1</a></li>
+
+
+
+                                <li tal:condition="python:(start+30)<len(view.brain)">
+                                  <a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' %
+                                                                 (request['catalog'],
+                                                                  request['name'],
+                                                                  start+30)">&gt;</a>
+                                </li>
+<li><a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' % (request['catalog'], request['name'], len(view.brain)-30)">&gt;&gt;</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="result-counter">
+                                Showing <span><tal:s content="python:start + 1">1</tal:s>-
+                                              <tal:e content="python:start + 30">9</tal:e></span> of
+                                        <span tal:content="python:len(view.brain)       ">11</span> results
+                            </div>
+                        </div>
+
+                    </div><!-- /.row -->
+                </div><!-- /.pagination-holder -->
+            </div><!-- /.products-grid #grid-view -->
+
+
+
+
+            <div id="list-view" class="products-grid fade tab-pane in active">
+                <div class="products-list">
+                    
+                    <div class="product-item product-item-holder" tal:repeat="item python:view.brain[start:start+30]">
+                        <div class="ribbon blue" tal:condition="python:item.discount > 0.4"><span>deep discount</span></div>
+                        <div class="ribbon red" tal:condition="python:item.discount > 0"><span>onsale</span></div> 
+                        <div class="row">
+                            <div class="no-margin col-xs-12 col-sm-4 image-holder">
+                                <div class="image banner wow fadeInUp" tal:define="obj item/getObject">
+                                  <img tal:replace="structure obj/@@images/productImage/mini" />
+                                </div>
+                            </div><!-- /.image-holder -->
+                            <div class="no-margin col-xs-12 col-sm-5 body-holder">
+                                <div class="body">
+                                    <div class="label-discount green"
+                                         tal:condition="python:item.discount > 0"
+                                         tal:content="python:'%s%% off' % int(item.discount*100)" />
+                                    <div class="title">
+                                        <a tal:attributes="href python:'/product/%s' % item.id" tal:content="item/Title" />
+                                    </div>
+                                    <div class="excerpt">
+                                        <p tal:content="structure item/Description" />
+                                    </div>
+                                    <div class="addto-compare">
+                                        <a class="btn-add-to-compare" href="#">add to compare list</a>
+                                    </div>
+                                </div>
+                            </div><!-- /.body-holder -->
+                            <div class="no-margin col-xs-12 col-sm-3 price-area">
+                                <div class="right-clmn">
+                                    <div class="price-prev"               
+                                         tal:condition="python:item.discount > 0"
+                                         tal:content="structure python:'<s>%s %s</s>' % (item.currency, item.price)" />
+                                    <div class="price-current"
+                                         tal:content="python:'%s %s' % (item.currency, item.salePrice if item.discount>0
+                                                                        else item.price)" />
+                                    <div class="availability"><label>In Stock:</label><span class="available" tal:content="item/inStock" /></div>
+                                    <a class="le-button" tal:attributes="href item/buyUrl">buy now</a>
+                                    <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
+                                </div>
+                            </div><!-- /.price-area -->
+                        </div><!-- /.row -->
+                    </div><!-- /.product-item -->
+
+                </div><!-- /.products-list -->
+
+
+
+
+
+
+                <div class="pagination-holder">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 text-left">
+                            <ul class="pagination ">
+<li><a tal:attributes="href python:'?catalog=%s&name=%s' % (request['catalog'], request['name'])">&lt;&lt;</a></li>
+                                <li tal:condition="python:start>=30">
+                                  <a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' %
+                                                                 (request['catalog'], 
+                                                                  request['name'], 
+                                                                  start-30)">&lt;</a>
+                                </li>
+
+
+
+                                <li class="current"><a tal:content="python:start/30 + 1">1</a></li>
+
+
+
+                                <li tal:condition="python:(start+30)<len(view.brain)">
+                                  <a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' %
+                                                                 (request['catalog'],
+                                                                  request['name'],
+                                                                  start+30)">&gt;</a>
+                                </li>
+<li><a tal:attributes="href python:'?catalog=%s&name=%s&start=%s' % (request['catalog'], request['name'], len(view.brain)-30)">&gt;&gt;</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="result-counter">
+                                Showing <span><tal:s content="python:start + 1">1</tal:s>-
+                                              <tal:e content="python:start + 30">9</tal:e></span> of
+                                        <span tal:content="python:len(view.brain)       ">11</span> results
+                            </div>
+                        </div>
+
+
+            </div><!-- /.products-grid #list-view -->
+
+        </div><!-- /.tab-content -->
+    </div><!-- /.grid-list-products -->
+
+</section><!-- /#gaming -->       
+
+</div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
