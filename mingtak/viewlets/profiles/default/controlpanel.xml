@@ -3,7 +3,7 @@
     name="portal_controlpanel"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="mingtak.viewlets">
-
+<!--
     <configlet
         title="Header and Footer setting"
         action_id="mingtak.viewlets.headerfootersetting"
@@ -29,5 +29,5 @@
         i18n:attributes="title">
             <permission>Manage portal</permission>
     </configlet>
-
+-->
 </object>
